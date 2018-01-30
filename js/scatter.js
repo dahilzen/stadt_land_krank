@@ -26,7 +26,7 @@ function drawScatter() {
         .attr("height", scatterHeight + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    d3.csv('../data/aerzte_versorgungsbericht_bearbeitet.csv', function drawScatterPlot(error,
+    d3.csv('data/aerzte_versorgungsbericht_bearbeitet.csv', function drawScatterPlot(error,
         rawdata) {
         if (error) throw error;
         var data = [];

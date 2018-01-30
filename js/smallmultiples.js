@@ -22,7 +22,7 @@ function thousandPoint(k) {
 }
 
 // csv loaded asynchronously
-d3.csv('../data/aerzte_versorgungsbericht_bearbeitet.csv', function(data) {
+d3.csv('data/aerzte_versorgungsbericht_bearbeitet.csv', function(data) {
     data.pop = parseInt(data.pop);
     data.count = parseInt(data.count);
     data.mean = parseFloat(data.mean);
