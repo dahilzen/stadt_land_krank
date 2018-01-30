@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Stadt, Land, Krank</title>
+    <meta name='description' content='Stadt, Land, Krank'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+    <style>
+    html {
+        background-color: rgb(170, 223, 236) !important;
+    }
+
+    .intro {
+        padding-top: 20rem;
+    }
+
+    #scroll {
+        position: relative;
+    }
+
+    .scroll__graphic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: auto;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .scroll__graphic.is-fixed {
+        position: fixed;
+    }
+
+    .scroll__graphic.is-bottom {
+        bottom: 0;
+        top: auto;
+    }
+
+    .chart {
+        position: absolute;
+        top: 50%;
+        -moz-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    .chart svg {
+        /*text-align: center;*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 8rem;
+        font-weight: 900;
+        color: #666;
+    }
+
+    .scroll__text,
+    .text {
+        position: relative;
+        width: 90%;
+        max-width: 645px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    p,
+    h1 {
+        text-align: left;
+        font-size: 1.2rem;
+        background: rgba(170, 223, 236, 0.8);
+        box-shadow: 0 0 1rem 0.5rem rgba(170, 223, 236, 0.8);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .logo {
+        position: fixed;
+        z-index: 999;
+        width: 100px;
+        top: 5px;
+        right: 20px;
+    }
+
+    a {
+        color: #1a87c7 !important;
+        border-bottom: 1px solid #1a87c7 !important;
+    }
+
+    #outro p {
+        font-size: 0.9rem !important;
+    }
+    /* Small Multiples */
+
+    #vis,
+    #scatter {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    #vis svg {
+        border-bottom-style: solid;
+        border-bottom-color: grey;
+        border-bottom-width: 0.1px;
+        padding-top: 8px;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: optimizeSpeed;
+    }
+
+    .x.axis path,
+    .y.axis path,
+    .x.axis line {
+        display: none;
+    }
+
+    .bar:hover {
+        fill: #bcbcbc;
+    }
+
+
+
+    .tooltip {
+        position: absolute;
+        text-align: center;
+        width: 60px;
+        height: 50px;
+        padding: 15px;
+        margin-top: -20px;
+        font: 10px sans-serif;
+        background: rgb(188, 188, 188);
+        pointer-events: none;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    /* Scatterplot */
+
+    .scatter__axis path,
+    .scatter__axis line {
+        stroke: #999;
+    }
+
+    .scatter__axis text {
+        stroke: #999 !important;
+        fill: none !important;
+        font-weight: lighter !important;
+    }
+
+    .dot {
+        stroke: #000;
+    }
+
+    select {
+        width: 50% !important;
+    }
+
+    @media screen and (max-width: 700px) {
+        select {
+            width: 100% !important;
+        }
+    }
+    </style>
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
+</head>
+
+<body>
+    <div class='logo'>
+        <a href='https://www.stimme.de' target='_blank'>
+            <img src='http://static1.heilbronnerstimme.de/stupl/pics/layout/2017/logo.png'></a></div>
+    <section id='scroll'>
+        <div class='scroll__graphic'>
+            <div class='chart'>
+            </div>
+        </div>
+        <div class='scroll__text'>
+            <div class='step intro' data-step='1'>
+                <h1>Stadt, Land, Krank</h1>
+                <p>In den Städten tummeln sich die Ärzte, in ländlichen Kommunen gibt es stellenweise noch nicht einmal einen Hausarzt. Ein Blick in die offiziellen
+                    Statistiken offenbart ein spürbares Stadt-Land-Gefälle.</p>
+                <p style="font-size: small">Von <a href="https://www.twitter.com/dahilzen" target="_blank">David Hilzendegen</a></p>
+            </div>
+            <div class='step' data-step='2'>
+                <p>Fast 13.000 Haus- und Facharztpraxen sind bei der Kassenärztlichen Vereinigung Baden-Württemberg gelistet. Schon der erste Blick lässt
+                    ein Gefälle zwischen Stadt und Land vermuten.</p>
+            </div>
+            <div class='step' data-step='3'>
+                <p>Tatsächlich befindet sich jede vierte Praxis in einer der sieben größten Städte &ndash; obwohl dort nur jeder sechste Baden-Württemberger
+                    lebt.
+                </p>
+            </div>
+            <div class='step' data-step='5'>
+                <p>Deutlicher wird das Gefälle beim Blick auf die Region Heilbronn-Hohenlohe.</p>
+            </div>
+            <div class='step' data-step='6'>
+                <p>Heilbronner etwa haben die Wahl zwischen 170 Praxen.</p>
+            </div>
+            <div class='step' data-step='7'>
+                <p>Im Hohenlohischen Zweiflingen hingegen hat sich kein einziger Arzt niedergelassen. Kranke müssen grundsätzlich ins benachbarte Öhringen
+                    fahren.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class='text' style="margin-bottom: 5rem;">
+        <p>Natürlich ist es wenig überraschend, dass sich dort, wo mehr Menschen leben &ndash; also in größeren Städten und Ballungsgebieten &ndash; auch
+            mehr Ärzte niederlassen.</p>
+        <p>Ein Blick auf den Anteil der Ärzte pro 1.000 Einwohner in den Gemeinden der Region ergibt allerdings ein ziemlich schiefes Bild: Vor allem Fachärzte
+            arbeiten bevorzugt in größeren Gemeinden. In einigen kleineren Kommunen der Region gibt es noch nicht einmal mehr einen Hausarzt oder einen
+            Zahnarzt.
+        </p>
+        <p>Die folgende Grafik zeigt den Anteil der Ärzte pro 1.000 Einwohner für alle 63 Gemeinden der Landkreise Heilbronn und Hohenlohe sowie dem Stadtkreis
+            Heilbronn. Suchen Sie sich Ihre Gemeinde und vergleichen Sie.</p>
+    </section>
+    <section id="vis">
+        <center>
+            <h2>Ärzte pro 1.000 Einwohner</h2>
+            <h4>FA = Fachärzte, HA = Hausärzte, ZA = Zahnärzte</h4>
+        </center>
+    </section>
+    <section class='text' style="margin-bottom: 5rem;margin-top: 5rem">
+        <p>Besonders im Alter ist eine gute hausärztliche Versorgung wichtig. Unsere Analyse zeigt, dass diese nicht in jeder Gemeine gegeben ist. Das Medianalter
+            beschreibt das Alter, an dem sich die Bevölkerung in zwei gleichgroße Gruppen teilen lässt: Die eine Hälfte der Bevölkerung ist jünger, die
+            andere älter als das Medianalter.</p>
+        <p>Die Gemeinde Flein ist mit 47 Jahren die Älteste in der Region &ndash; gemeinsam mit Massenbachhausen, Beilstein und Wüstenrot. Und doch unterscheiden
+            sich die Orte hinsichtlich ihrer Ärztedichte massiv.
+        </p>
+        <p> In Flein kümmern sich gerade einmal rund 0,3 Hausärzte um 1.000 Einwohner, Beilstein kommt immerhin auf 0,8. Ältere Menschen aus Flein sollten
+            also mobil genug sein, um ins benachbarte Heilbronn pendeln zu können.</p>
+        <p>Die folgende Grafik zeigt die Ärztediche in den 63 Gemeinden der Region in Bezug auf das Medianalter der Bevölkerung. Erkunden Sie die Unterschiede
+            zwischen den Orten gene selbst: Über das Dropdown-Menü können Sie sich einen Ort aussuchen und anzeigen lassen.</p>
+    </section>
+    <section id="scatter" style="margin-bottom: 5rem;">
+    </section>
+    <section id="outro" class="text">
+        <p>Die Daten dieser Analyse stammen allesamt aus öffentlich zugänglichen Quellen: Die Adressen der Praxen kommen aus der Arztsuchen der <a href="https://www.arztsuche-bw.de/"
+                target="_blank">Kassenärztlichen Vereinigung Baden-Württemberg</a>, Stand Dezember 2017.</p>
+        <p>Dort ist prinizipiell auch die Anzahl der Ärzte pro Kommune auslesbar. Allerdings gibt es keine Garantie, dass Ärzte, die in bestimmten Kommunen
+            gemeldet sind, auch dort arbeiten. Insbesondere Fachärzte betreiben gemeindem mit Kollegen auf dem Papier oftmals mehrere Praxen, sind aber
+            nur in einer davon tätig. Verlässlichere Zahlen bietet der <a href="https://www.kvbawue.de/presse/publikationen/versorgungsbericht/" target="_blank">Versorgungsbericht der Kassenärztlichen Vereinigung</a></p>
+        <p>Die Bevölkerungsdaten der Gemeinden, also die Einwohnerzahl sowie das Alter der Einwohner, stammen vom <a href="https://www.statistik-bw.de/" target="_blank">Statistischen Landesamt Baden-Württemberg</a>.
+            Stand der Daten ist 31.12.2015. Neuere Zahlen sind derzeit nicht öffentlich verfügbar.</p>
+        <p>Der Quellcode und die Daten dieser Analyse sind auf Github frei verfügbar.</p>
+        <p style="text-align: center;">
+            <a href="http://www.stimme.de/meta/ueberuns/impressum/Impressum;art5015,1284151" target="_blank">Impressum</a> |
+            <a href="http://www.stimme.de/meta/ueberuns/datenschutz/Datenschutzerklaerung;art77889,2188299" target="_blank">Datenschutz</a></p>
+    </section>
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src='js/scrollama.js'></script>
+    <script src="js/map.js"></script>
+    <script src="js/smallmultiples.js"></script>
+    <script src="js/scatter.js"></script>
+    <script>
+    var mobile;
+
+    function getMobile() {
+        var viewportWidth = window.innerWidth;
+        if (viewportWidth < [500]) {
+            mobile = true;
+        } else {
+            mobile = false;
+        }
+    }
+
+    // using d3 for convenience
+    var container = d3.select('#scroll');
+    var graphic = container.select('.scroll__graphic');
+    var chart = graphic.select('.chart');
+    var text = container.select('.scroll__text');
+    var step = text.selectAll('.step');
+
+    // initialize the scrollama
+    var scroller = scrollama();
+
+    // generic window resize listener event
+    function handleResize() {
+        // 1. update height of step elements
+        var stepHeight = Math.floor(window.innerHeight * 1.5);
+        step.style('height', stepHeight + 'px');
+
+        // 2. update width/height of graphic element
+        var bodyWidth = d3.select('body').node().offsetWidth;
+
+        graphic
+            .style('width', bodyWidth + 'px')
+            .style('height', window.innerHeight + 'px');
+
+        var chartWidth = bodyWidth * 0.9;
+
+        chart
+            .style('width', chartWidth + 'px')
+            .style('height', Math.floor(window.innerHeight) * 0.9 + 'px')
+        //.style('border', '1px solid #000');
+
+        // 3. tell scrollama to update new element dimensions
+        scroller.resize();
+    }
+
+    // scrollama event handlers
+    function handleStepEnter(response) {
+        // response = { element, direction, index }
+
+        var index = response.index;
+        var direction = response.direction;
+
+        // add color to current step only
+        step.classed('is-active', function(d, i) {
+            return i === response.index;
+        });
+
+        // update graphic based on step
+        stepArray[index]();
+    }
+
+    function handleContainerEnter(response) {
+        // response = { direction }
+
+        // sticky the graphic (old school)
+        graphic.classed('is-fixed', true);
+        graphic.classed('is-bottom', false);
+    }
+
+    function handleContainerExit(response) {
+        // response = { direction }
+
+        // un-sticky the graphic, and pin to top/bottom of container
+        graphic.classed('is-fixed', false);
+        graphic.classed('is-bottom', response.direction === 'down');
+    }
+
+    function init() {
+        // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+        handleResize();
+        getMobile();
+        drawMap();
+        drawScatter();
+
+        // 2. setup the scroller passing options
+        // this will also initialize trigger observations
+        // 3. bind scrollama event handlers (this can be chained like below)
+        scroller.setup({
+                container: '#scroll',
+                graphic: '.scroll__graphic',
+                text: '.scroll__text',
+                step: '.scroll__text .step',
+                debug: false,
+                offset: 0.8
+            })
+            .onStepEnter(handleStepEnter)
+            .onContainerEnter(handleContainerEnter)
+            .onContainerExit(handleContainerExit);
+
+        // setup resize event
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', getMobile)
+        window.addEventListener('resize', function() {
+            setTimeout(function() {
+                d3.select('.chart > svg').remove();
+                drawMap();
+            }, 200);
+        });
+        window.addEventListener('resize', function() {
+            setTimeout(function() {
+                d3.select('#scatter > svg').remove();
+                d3.select('#filter > select').remove();
+                d3.select('#scatter > h2').remove();
+                drawScatter();
+            }, 2000);
+        });
+    }
+    // kick things off
+    init();
+    </script>
+</body>
+
+</html>
