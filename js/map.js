@@ -43,9 +43,9 @@ function drawMap() {
     //Haus- und Facharztpraxen sowie die Umrisse von Land und Gemeinden simultan einlesen und 
     //erst zeichnen, wenn komplett geladen
     d3.queue()
-        .defer(d3.json, '../data/alle_gemeinden_wgs84.topojson')
-        .defer(d3.csv, '../data/180110_praxen_fa_geo.csv')
-        .defer(d3.csv, '../data/180110_praxen_ha_geo.csv')
+        .defer(d3.json, 'data/alle_gemeinden_wgs84.topojson')
+        .defer(d3.csv, 'data/180110_praxen_fa_geo.csv')
+        .defer(d3.csv, 'data/180110_praxen_ha_geo.csv')
         .await(function(error, reg, ha, fa) {
             if (error) {
                 console.error('Da ist etwas schiefgelaufen: ' + error);
