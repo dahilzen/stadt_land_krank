@@ -14,6 +14,21 @@
 
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@stimmeonline">
+    <meta name="twitter:creator" content="@dahilzen">
+    <meta name="twitter:title" content="Stadt, Land, Krank">
+    <meta name="twitter:description" content="So ist es um die medizinische Versorgung in der Region Heilbronn bestellt.">
+    <meta name="twitter:image" content="img/screen.png">
+
+    <meta property="og:url" content="https://dahilzen.github.io/stadt_land_krank/"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Stadt, Land, Krank"/>
+    <meta property="og:description" content="So ist es um die medizinische Versorgung in der Region Heilbronn bestellt."/>
+    <meta property="og:image" content="img/screen.png"/>
+
+
     <title>Stadt, Land, Krank</title>
     <meta name='description' content='Stadt, Land, Krank'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
@@ -95,12 +110,22 @@
         text-align: center;
     }
 
-    .logo {
+    .logo,
+    .social {
         position: fixed;
         z-index: 999;
         width: 100px;
         top: 5px;
         right: 20px;
+    }
+
+    .social {
+        width: 35px;
+        left: 10px;
+    }
+
+    .social img {
+        padding-bottom: 0.5rem;
     }
 
     a {
@@ -150,8 +175,6 @@
         fill: #bcbcbc;
     }
 
-
-
     .tooltip {
         position: absolute;
         text-align: center;
@@ -198,7 +221,19 @@
 <body>
     <div class='logo'>
         <a href='https://www.stimme.de' target='_blank'>
-            <img src='http://static1.heilbronnerstimme.de/stupl/pics/layout/2017/logo.png'></a></div>
+            <img src='img/logo.png'></a>
+    </div>
+    <div class='social'>
+        <a href='https://twitter.com/intent/tweet?status=Stadt, Land, Krank - So ist es um die medizinische Versorgung in der Region Heilbronn bestellt+https://dahilzen.github.io/stadt_land_krank/'
+            target='_blank'>
+            <img src='img/twitter.png'></a>
+        <a href='https://www.facebook.com/sharer/sharer.php?u=https://dahilzen.github.io/stadt_land_krank/&title=Stadt, Land, Krank - So ist es um die medizinische Versorgung in der Region Heilbronn bestellt'
+            target='_blank'>
+            <img src='img/facebook.png'></a>
+        <a href='whatsapp://send?text=Stadt, Land, Krank: So ist es um die medizinische Versorgung in der Region Heilbronn bestellt. https://dahilzen.github.io/stadt_land_krank/'
+            target='_blank'>
+            <img src='img/whatsapp.png'></a>
+    </div>
     <section id='scroll'>
         <div class='scroll__graphic'>
             <div class='chart'>
