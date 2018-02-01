@@ -31,7 +31,7 @@ function drawScatter() {
         if (error) throw error;
         var data = [];
         rawdata.forEach(function(d) {
-            if (d.type == 'HA') {
+            if (d.city != 'Baden-Württemberg' && d.type == 'HA') {
                 data.push(d);
             }
         });

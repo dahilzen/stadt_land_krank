@@ -22,11 +22,11 @@
     <meta name="twitter:description" content="So ist es um die medizinische Versorgung in der Region Heilbronn bestellt.">
     <meta name="twitter:image" content="./img/screen.png">
 
-    <meta property="og:url" content="https://dahilzen.github.io/stadt_land_krank/"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Stadt, Land, Krank"/>
-    <meta property="og:description" content="So ist es um die medizinische Versorgung in der Region Heilbronn bestellt."/>
-    <meta property="og:image" content="./img/screen.png"/>
+    <meta property="og:url" content="https://dahilzen.github.io/stadt_land_krank/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Stadt, Land, Krank" />
+    <meta property="og:description" content="So ist es um die medizinische Versorgung in der Region Heilbronn bestellt." />
+    <meta property="og:image" content="./img/screen.png" />
 
 
     <title>Stadt, Land, Krank</title>
@@ -128,6 +128,10 @@
         padding-bottom: 0.5rem;
     }
 
+    .whatsapp {
+        visibility: hidden;
+    }
+
     a {
         color: #1a87c7 !important;
         border-bottom: 1px solid #1a87c7 !important;
@@ -213,6 +217,54 @@
         select {
             width: 100% !important;
         }
+
+        .whatsapp {
+            visibility: visible;
+        }
+    }
+    /* Scrolldown-Pfeil */
+
+    .scrolldown {
+        padding-top: 60px;
+    }
+
+    .scrolldown span {
+        position: absolute;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 3px solid #000;
+        border-bottom: 3px solid #000;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: sdb 2s infinite;
+        animation: sdb 2s infinite;
+        box-sizing: border-box;
+    }
+
+    @-webkit-keyframes sdb {
+        0% {
+            -webkit-transform: rotate(-45deg) translate(0, 0);
+        }
+        20% {
+            -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+        }
+        40% {
+            -webkit-transform: rotate(-45deg) translate(0, 0);
+        }
+    }
+
+    @keyframes sdb {
+        0% {
+            transform: rotate(-45deg) translate(0, 0);
+        }
+        20% {
+            transform: rotate(-45deg) translate(-10px, 10px);
+        }
+        40% {
+            transform: rotate(-45deg) translate(0, 0);
+        }
     }
     </style>
     <link rel='stylesheet' type='text/css' href='css/main.css'>
@@ -224,15 +276,12 @@
             <img src='img/logo.png'></a>
     </div>
     <div class='social'>
-        <a href='https://twitter.com/intent/tweet?status=Stadt, Land, Krank - So ist es um die medizinische Versorgung in der Region Heilbronn bestellt+https://dahilzen.github.io/stadt_land_krank/'
-            target='_blank'>
+        <a href='https://twitter.com/intent/tweet?status=Stadt, Land, Krank - So ist es um die medizinische Versorgung in der Region Heilbronn bestellt+https://dahilzen.github.io/stadt_land_krank/' target='_blank'>
             <img src='img/twitter.png'></a>
-        <a href='https://www.facebook.com/sharer/sharer.php?u=https://dahilzen.github.io/stadt_land_krank/&title=Stadt, Land, Krank - So ist es um die medizinische Versorgung in der Region Heilbronn bestellt'
-            target='_blank'>
+        <a href='https://www.facebook.com/sharer/sharer.php?u=https://dahilzen.github.io/stadt_land_krank/&title=Stadt, Land, Krank - So ist es um die medizinische Versorgung in der Region Heilbronn bestellt' target='_blank'>
             <img src='img/facebook.png'></a>
-        <a href='whatsapp://send?text=Stadt, Land, Krank: So ist es um die medizinische Versorgung in der Region Heilbronn bestellt. https://dahilzen.github.io/stadt_land_krank/'
-            target='_blank'>
-            <img src='img/whatsapp.png'></a>
+        <div class="whatsapp"><a href='whatsapp://send?text=Stadt, Land, Krank: So ist es um die medizinische Versorgung in der Region Heilbronn bestellt. https://dahilzen.github.io/stadt_land_krank/' target='_blank'>
+            <img src='img/whatsapp.png'></a></div>
     </div>
     <section id='scroll'>
         <div class='scroll__graphic'>
@@ -242,17 +291,16 @@
         <div class='scroll__text'>
             <div class='step intro' data-step='1'>
                 <h1>Stadt, Land, Krank</h1>
-                <p>In den Städten tummeln sich die Ärzte, in ländlichen Kommunen gibt es stellenweise noch nicht einmal einen Hausarzt. Ein Blick in die offiziellen
-                    Statistiken offenbart ein spürbares Stadt-Land-Gefälle.</p>
+                <p>In den Städten tummeln sich die Ärzte, in ländlichen Kommunen gibt es stellenweise noch nicht einmal einen Hausarzt. Ein Blick in die offiziellen Statistiken offenbart ein spürbares Stadt-Land-Gefälle.</p>
                 <p style="font-size: small">Von <a href="https://www.twitter.com/dahilzen" target="_blank">David Hilzendegen</a></p>
+
+                <a class="scrolldown"><span></span></a>
             </div>
             <div class='step' data-step='2'>
-                <p>Fast 13.000 Haus- und Facharztpraxen sind bei der Kassenärztlichen Vereinigung Baden-Württemberg gelistet. Schon der erste Blick lässt
-                    ein Gefälle zwischen Stadt und Land vermuten.</p>
+                <p>Fast 13.000 Haus- und Facharztpraxen sind bei der Kassenärztlichen Vereinigung Baden-Württemberg gelistet. Schon der erste Blick lässt ein Gefälle zwischen Stadt und Land vermuten.</p>
             </div>
             <div class='step' data-step='3'>
-                <p>Tatsächlich befindet sich jede vierte Praxis in einer der sieben größten Städte &ndash; obwohl dort nur jeder sechste Baden-Württemberger
-                    lebt.
+                <p>Tatsächlich befindet sich jede vierte Praxis in einer der sieben größten Städte &ndash; obwohl dort nur jeder sechste Baden-Württemberger lebt.
                 </p>
             </div>
             <div class='step' data-step='5'>
@@ -262,21 +310,16 @@
                 <p>Heilbronner etwa haben die Wahl zwischen 170 Praxen.</p>
             </div>
             <div class='step' data-step='7'>
-                <p>Im Hohenlohischen Zweiflingen hingegen hat sich kein einziger Arzt niedergelassen. Kranke müssen grundsätzlich ins benachbarte Öhringen
-                    fahren.
+                <p>Im Hohenlohischen Zweiflingen hingegen hat sich kein einziger Arzt niedergelassen. Kranke müssen grundsätzlich ins benachbarte Öhringen fahren.
                 </p>
             </div>
         </div>
     </section>
     <section class='text' style="margin-bottom: 5rem;">
-        <p>Natürlich ist es wenig überraschend, dass sich dort, wo mehr Menschen leben &ndash; also in größeren Städten und Ballungsgebieten &ndash; auch
-            mehr Ärzte niederlassen.</p>
-        <p>Ein Blick auf den Anteil der Ärzte pro 1.000 Einwohner in den Gemeinden der Region ergibt allerdings ein ziemlich schiefes Bild: Vor allem Fachärzte
-            arbeiten bevorzugt in größeren Gemeinden. In einigen kleineren Kommunen der Region gibt es noch nicht einmal mehr einen Hausarzt oder einen
-            Zahnarzt.
+        <p>Natürlich ist es wenig überraschend, dass sich dort, wo mehr Menschen leben &ndash; also in größeren Städten und Ballungsgebieten &ndash; auch mehr Ärzte niederlassen.</p>
+        <p>Ein Blick auf den Anteil der Ärzte pro 1.000 Einwohner in den Gemeinden der Region ergibt allerdings ein ziemlich schiefes Bild: Vor allem Fachärzte arbeiten bevorzugt in größeren Gemeinden. In einigen kleineren Kommunen der Region gibt es noch nicht einmal mehr einen Hausarzt oder einen Zahnarzt.
         </p>
-        <p>Die folgende Grafik zeigt den Anteil der Ärzte pro 1.000 Einwohner für alle 63 Gemeinden der Landkreise Heilbronn und Hohenlohe sowie dem Stadtkreis
-            Heilbronn. Suchen Sie sich Ihre Gemeinde und vergleichen Sie.</p>
+        <p>Die folgende Grafik zeigt den Anteil der Ärzte pro 1.000 Einwohner für alle 63 Gemeinden der Landkreise Heilbronn und Hohenlohe sowie dem Stadtkreis Heilbronn. Suchen Sie sich Ihre Gemeinde und vergleichen Sie.</p>
     </section>
     <section id="vis">
         <center>
@@ -285,28 +328,19 @@
         </center>
     </section>
     <section class='text' style="margin-bottom: 5rem;margin-top: 5rem">
-        <p>Besonders im Alter ist eine gute hausärztliche Versorgung wichtig. Unsere Analyse zeigt, dass diese nicht in jeder Gemeine gegeben ist. Das Medianalter
-            beschreibt das Alter, an dem sich die Bevölkerung in zwei gleichgroße Gruppen teilen lässt: Die eine Hälfte der Bevölkerung ist jünger, die
-            andere älter als das Medianalter.</p>
-        <p>Die Gemeinde Flein ist mit 47 Jahren die Älteste in der Region &ndash; gemeinsam mit Massenbachhausen, Beilstein und Wüstenrot. Und doch unterscheiden
-            sich die Orte hinsichtlich ihrer Ärztedichte massiv.
+        <p>Besonders im Alter ist eine gute hausärztliche Versorgung wichtig. Unsere Analyse zeigt, dass diese nicht in jeder Gemeinde gegeben ist. Das Medianalter beschreibt das Alter, an dem sich die Bevölkerung in zwei gleichgroße Gruppen teilen lässt: Die eine Hälfte der Bevölkerung ist jünger, die andere älter als das Medianalter.</p>
+        <p>Die Gemeinde Flein ist mit 47 Jahren die Älteste in der Region &ndash; gemeinsam mit Massenbachhausen, Beilstein und Wüstenrot. Und doch unterscheiden sich die Orte hinsichtlich ihrer Ärztedichte massiv.
         </p>
-        <p> In Flein kümmern sich gerade einmal rund 0,3 Hausärzte um 1.000 Einwohner, Beilstein kommt immerhin auf 0,8. Ältere Menschen aus Flein sollten
-            also mobil genug sein, um ins benachbarte Heilbronn pendeln zu können.</p>
-        <p>Die folgende Grafik zeigt die Ärztediche in den 63 Gemeinden der Region in Bezug auf das Medianalter der Bevölkerung. Erkunden Sie die Unterschiede
-            zwischen den Orten gene selbst: Über das Dropdown-Menü können Sie sich einen Ort aussuchen und anzeigen lassen.</p>
+        <p> In Flein kümmern sich gerade einmal rund 0,3 Hausärzte um 1.000 Einwohner, Beilstein kommt immerhin auf 0,8. Ältere Menschen aus Flein sollten also mobil genug sein, um ins benachbarte Heilbronn pendeln zu können.</p>
+        <p>Die folgende Grafik zeigt die Ärztedichte in den 63 Gemeinden der Region in Bezug auf das Medianalter der Bevölkerung. Erkunden Sie die Unterschiede zwischen den Orten gerne selbst: Über das Dropdown-Menü können Sie sich einen Ort aussuchen und anzeigen lassen.</p>
     </section>
     <section id="scatter" style="margin-bottom: 5rem;">
     </section>
     <section id="outro" class="text">
-        <p>Die Daten dieser Analyse stammen allesamt aus öffentlich zugänglichen Quellen: Die Adressen der Praxen kommen aus der Arztsuchen der <a href="https://www.arztsuche-bw.de/"
-                target="_blank">Kassenärztlichen Vereinigung Baden-Württemberg</a>, Stand Dezember 2017.</p>
-        <p>Dort ist prinizipiell auch die Anzahl der Ärzte pro Kommune auslesbar. Allerdings gibt es keine Garantie, dass Ärzte, die in bestimmten Kommunen
-            gemeldet sind, auch dort arbeiten. Insbesondere Fachärzte betreiben gemeindem mit Kollegen auf dem Papier oftmals mehrere Praxen, sind aber
-            nur in einer davon tätig. Verlässlichere Zahlen bietet der <a href="https://www.kvbawue.de/presse/publikationen/versorgungsbericht/" target="_blank">Versorgungsbericht der Kassenärztlichen Vereinigung</a></p>
-        <p>Die Bevölkerungsdaten der Gemeinden, also die Einwohnerzahl sowie das Alter der Einwohner, stammen vom <a href="https://www.statistik-bw.de/" target="_blank">Statistischen Landesamt Baden-Württemberg</a>.
-            Stand der Daten ist 31.12.2015. Neuere Zahlen sind derzeit nicht öffentlich verfügbar.</p>
-        <p>Der Quellcode und die Daten dieser Analyse sind auf Github frei verfügbar.</p>
+        <p>Die Daten dieser Analyse stammen allesamt aus öffentlich zugänglichen Quellen: Die Adressen der Praxen kommen aus der Arztsuche der <a href="https://www.arztsuche-bw.de/" target="_blank">Kassenärztlichen Vereinigung Baden-Württemberg</a>, Stand Dezember 2017.</p>
+        <p>Dort ist prinizipiell auch die Anzahl der Ärzte pro Kommune auslesbar. Allerdings gibt es keine Garantie, dass Ärzte, die in bestimmten Kommunen gemeldet sind, auch dort arbeiten. Insbesondere Fachärzte betreiben gemeinsam mit Kollegen auf dem Papier oftmals mehrere Praxen, sind aber nur in einer davon tätig. Verlässlichere Zahlen bietet der <a href="https://www.kvbawue.de/presse/publikationen/versorgungsbericht/" target="_blank">Versorgungsbericht der Kassenärztlichen Vereinigung</a></p>
+        <p>Die Bevölkerungsdaten, also die Einwohnerzahl sowie das Alter der Einwohner, stammen vom <a href="https://www.statistik-bw.de/" target="_blank">Statistischen Landesamt Baden-Württemberg</a>. Stand der Daten ist der 31.12.2015. Neuere Zahlen sind derzeit nicht öffentlich verfügbar.</p>
+        <p>Der Quellcode und die Daten dieser Analyse sind <a href="https://github.com/dahilzen/stadt_land_krank" target="_blank">auf Github frei verfügbar.</a></p>
         <p style="text-align: center;">
             <a href="http://www.stimme.de/meta/ueberuns/impressum/Impressum;art5015,1284151" target="_blank">Impressum</a> |
             <a href="http://www.stimme.de/meta/ueberuns/datenschutz/Datenschutzerklaerung;art77889,2188299" target="_blank">Datenschutz</a></p>

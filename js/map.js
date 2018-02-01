@@ -203,8 +203,10 @@ var stepArray = [
 function getScale() {
     var viewportWidth = window.innerWidth;
     var initZoom;
-    if (viewportWidth < [800]) {
+    if (viewportWidth < [500]) {
         initZoom = 5500;
+    } else if (viewportWidth > [500] && viewportWidth < [800]) {
+        initZoom = 11630;
     } else {
         initZoom = 11630;
     }

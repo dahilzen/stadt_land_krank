@@ -17,7 +17,7 @@ var yAxis = d3.axisLeft()
     .scale(y)
     .ticks(3);
 
-function thousandPoint(k) {
+function thousandPoint(k,l) {
     return d3.format(',')(k).replace(',', '.');
 }
 
