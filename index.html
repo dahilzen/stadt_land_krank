@@ -41,6 +41,11 @@
         padding-top: 20rem;
     }
 
+    .blur {
+        background: rgba(170, 223, 236, 0.8);
+        box-shadow: 0 0 1rem 0.5rem rgba(170, 223, 236, 0.8);
+    }
+
     #scroll {
         position: relative;
     }
@@ -98,12 +103,16 @@
         right: 0;
     }
 
-    p,
-    h1 {
+    p {
         text-align: left;
         font-size: 1.2rem;
         background: rgba(170, 223, 236, 0.8);
         box-shadow: 0 0 1rem 0.5rem rgba(170, 223, 236, 0.8);
+    }
+
+    .blur p {
+        background: none;
+        box-shadow: none;
     }
 
     h1 {
@@ -224,10 +233,6 @@
     }
     /* Scrolldown-Pfeil */
 
-    .scrolldown {
-        padding-top: 60px;
-    }
-
     .scrolldown span {
         position: absolute;
         left: 50%;
@@ -290,11 +295,12 @@
         </div>
         <div class='scroll__text'>
             <div class='step intro' data-step='1'>
-                <h1>Stadt, Land, Krank</h1>
-                <p>In den Städten tummeln sich die Ärzte, in ländlichen Kommunen gibt es stellenweise noch nicht einmal einen Hausarzt. Ein Blick in die offiziellen Statistiken offenbart ein spürbares Stadt-Land-Gefälle.</p>
-                <p style="font-size: small">Von <a href="https://www.twitter.com/dahilzen" target="_blank">David Hilzendegen</a></p>
-
-                <a class="scrolldown"><span></span></a>
+                <div class="blur">
+                    <h1>Stadt, Land, Krank</h1>
+                    <p>In den Städten tummeln sich die Ärzte, in ländlichen Kommunen gibt es stellenweise noch nicht einmal einen Hausarzt. Ein Blick in die offiziellen Statistiken offenbart ein spürbares Stadt-Land-Gefälle.</p>
+                    <p style="font-size: small">Von <a href="https://www.twitter.com/dahilzen" target="_blank">David Hilzendegen</a></p>
+                    <p class="scrolldown"><span></span></p>
+                </div>
             </div>
             <div class='step' data-step='2'>
                 <p>Fast 13.000 Haus- und Facharztpraxen sind bei der Kassenärztlichen Vereinigung Baden-Württemberg gelistet. Schon der erste Blick lässt ein Gefälle zwischen Stadt und Land vermuten.</p>
@@ -307,10 +313,10 @@
                 <p>Deutlicher wird das Gefälle beim Blick auf die Region Heilbronn-Hohenlohe.</p>
             </div>
             <div class='step' data-step='6'>
-                <p>Heilbronner etwa haben die Wahl zwischen 170 Praxen.</p>
+                <p>In Heilbronn haben sich Ärzte in ingesamt 170 Praxen niedergelassen.</p>
             </div>
             <div class='step' data-step='7'>
-                <p>Im Hohenlohischen Zweiflingen hingegen hat sich kein einziger Arzt niedergelassen. Kranke müssen grundsätzlich ins benachbarte Öhringen fahren.
+                <p>Im Hohenlohischen Zweiflingen hingegen praktiziert kein einziger Arzt. Kranke müssen grundsätzlich ins benachbarte Öhringen fahren. <a href="http://www.stimme.de/3978941" target="_blank">Wir haben uns vor Ort umgesehen, wie das im Alltag funktioniert.</a>
                 </p>
             </div>
         </div>
@@ -319,7 +325,7 @@
         <p>Natürlich ist es wenig überraschend, dass sich dort, wo mehr Menschen leben &ndash; also in größeren Städten und Ballungsgebieten &ndash; auch mehr Ärzte niederlassen.</p>
         <p>Ein Blick auf den Anteil der Ärzte pro 1.000 Einwohner in den Gemeinden der Region ergibt allerdings ein ziemlich schiefes Bild: Vor allem Fachärzte arbeiten bevorzugt in größeren Gemeinden. In einigen kleineren Kommunen der Region gibt es noch nicht einmal mehr einen Hausarzt oder einen Zahnarzt.
         </p>
-        <p>Die folgende Grafik zeigt den Anteil der Ärzte pro 1.000 Einwohner für Baden-Württemberg insgesamt und für  alle 63 Gemeinden der Landkreise Heilbronn und Hohenlohe sowie dem Stadtkreis Heilbronn. Suchen Sie sich Ihre Gemeinde und vergleichen Sie.</p>
+        <p>Die folgende Grafik zeigt den Anteil der Ärzte pro 1.000 Einwohner für Baden-Württemberg insgesamt und für alle 63 Gemeinden der Landkreise Heilbronn und Hohenlohe sowie dem Stadtkreis Heilbronn. Suchen Sie sich Ihre Gemeinde und vergleichen Sie.</p>
     </section>
     <section id="vis">
         <center>
@@ -376,7 +382,7 @@
     // generic window resize listener event
     function handleResize() {
         // 1. update height of step elements
-        var stepHeight = Math.floor(window.innerHeight * 1.5);
+        var stepHeight = Math.floor(window.innerHeight * 0.9);
         step.style('height', stepHeight + 'px');
 
         // 2. update width/height of graphic element
