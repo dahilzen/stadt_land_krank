@@ -146,8 +146,12 @@
         border-bottom: 1px solid #1a87c7 !important;
     }
 
-    #outro p {
+    #outro p, #impressum p {
         font-size: 0.9rem !important;
+    }
+
+    #impressum {
+        padding-top: 500px;
     }
     /* Small Multiples */
 
@@ -271,6 +275,49 @@
             transform: rotate(-45deg) translate(0, 0);
         }
     }
+    /*Weiterlesen*/
+
+    .readon {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        padding-top: 80px;
+        z-index: 99;
+    }
+
+    .link {
+        position: relative;
+        width: 31.3%;
+        padding-right: 1%;
+        padding-left: 1%;
+        padding-bottom: 40px;
+        float: left;
+    }
+
+    @media screen and (max-width: 800px) {
+        .link {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    #readon a:link {
+        color: #3a3b42 !important;
+    }
+
+    #readon a:visited {
+        color: #3a3b42 !important;
+    }
+
+    #readon a:hover {
+        color: #1a87c7 !important;
+    }
+
+    #readon a:active {
+        color: #3a3b42 !important;
+    }
     </style>
     <link rel='stylesheet' type='text/css' href='css/main.css'>
 </head>
@@ -347,10 +394,40 @@
         <p>Dort ist prinizipiell auch die Anzahl der Ärzte pro Kommune auslesbar. Allerdings gibt es keine Garantie, dass Ärzte, die in bestimmten Kommunen gemeldet sind, auch dort arbeiten. Insbesondere Fachärzte betreiben gemeinsam mit Kollegen auf dem Papier oftmals mehrere Praxen, sind aber nur in einer davon tätig. Verlässlichere Zahlen bietet der <a href="https://www.kvbawue.de/presse/publikationen/versorgungsbericht/" target="_blank">Versorgungsbericht der Kassenärztlichen Vereinigung</a></p>
         <p>Die Bevölkerungsdaten, also die Einwohnerzahl sowie das Alter der Einwohner, stammen vom <a href="https://www.statistik-bw.de/" target="_blank">Statistischen Landesamt Baden-Württemberg</a>. Stand der Daten ist der 31.12.2015. Neuere Zahlen sind derzeit nicht öffentlich verfügbar.</p>
         <p>Der Quellcode und die Daten dieser Analyse sind <a href="https://github.com/dahilzen/stadt_land_krank" target="_blank">auf Github frei verfügbar.</a></p>
+    </section>
+    <section id="readon">
+        <div class="readon">
+            <h2 style="text-align: center;">Mehr zum Thema Ärzte und Ärztemangel in der Region:</h2>
+            <a href="http://www.stimme.de/3980221" target="_blank">
+                <div class="link">
+                    <img src="img/arztsuche.jpg">
+                    <h3>Kommunen suchen verzweifelt nach Ärzten</h3>
+                    <p>Weil Hausärzte knapp werden, werden Gemeinden kreativ. Vom Finderlohn für einen Arzt bis zu Vermittlungsagenturen gibt es alles.</p>
+                </div>
+            </a>
+                       <a href="http://www.stimme.de/3978941" target="_blank">
+                <div class="link">
+                    <img src="img/zweiflingen.jpg">
+                    <h3>Wie Zweiflingen ohne einen Arzt klar kommt</h3>
+                    <p>Zweiflingen ist die einzige Gemeinde in der Region, in der es überhaupt keinen Arzt gibt. Wer kein Auto hat, ist aufgeschmissen. Die Zweiflinger helfen sich so gut es geht gegenseitig. Ein Ausblick für die Zukunft in anderen Gemeinden?</p>
+                </div>
+            </a>
+            <a href="http://www.stimme.de/3980195" target="_blank">
+                <div class="link">
+                    <img src="img/aerzteschwund.jpg">
+                    <h3>Der Hausärzteschwund nimmt zu</h3>
+                    <p>Ärztekammer und Kassenärztliche Vereinigung schlagen Alarm: In den kommenden Jahren könnten im Land 500 Hausarzt-Praxen keine Nachfolger finden.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="impressum" class="text">
         <p style="text-align: center;">
             <a href="http://www.stimme.de/meta/ueberuns/impressum/Impressum;art5015,1284151" target="_blank">Impressum</a> |
             <a href="http://www.stimme.de/meta/ueberuns/datenschutz/Datenschutzerklaerung;art77889,2188299" target="_blank">Datenschutz</a></p>
     </section>
+
     <script src='https://d3js.org/d3.v4.min.js'></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
     <script src='js/scrollama.js'></script>
